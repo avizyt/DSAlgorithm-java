@@ -1,4 +1,5 @@
 package graph.problems;
 
-public class DepthFisrtPath {
+public class DFPathClient {
+
 }

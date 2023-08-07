@@ -1,11 +1,11 @@
 package linkedlist;
 
 class Node<T> {
-    T item;
+    T data;
     Node<T> next;
 
-    public Node(T item) {
-        this.item = item;
+    public Node(T data) {
+        this.data = data;
         this.next = null;
     }
 }
@@ -30,15 +30,15 @@ public class GenericLinkedList<T> {
     }
 
     // Method to insert an element at the beginning of the linked list
-    public void insertAtBeginning(T item) {
-        Node<T> newNode = new Node<>(item);
+    public void insertAtBeginning(T data) {
+        Node<T> newNode = new Node<>(data);
         newNode.next = head;
         head = newNode;
         size++;
     }
 
-    public void insertAtEnd(T item) {
-        Node<T> newNode = new Node<>(item);
+    public void insertAtEnd(T data) {
+        Node<T> newNode = new Node<>(data);
         if (isEmpty()){
             head = newNode;
         } else {
@@ -52,16 +52,16 @@ public class GenericLinkedList<T> {
     }
 
     // Method to insert an element at a specific index in the linked list
-    public void insertAtIndex(int index, T item) {
+    public void insertAtIndex(int index, T data) {
         if (index <0 || index > size) {
             throw new IndexOutOfBoundsException("Invalid index");
         }
         if (index == 0) {
-            insertAtBeginning(item);
+            insertAtBeginning(data);
         } else if (index == size) {
-            insertAtEnd(item);
+            insertAtEnd(data);
         } else {
-            Node<T> newNode = new Node<>(item);
+            Node<T> newNode = new Node<>(data);
             Node<T> prev = null;
             Node<T> curr = head;
             for (int i = 0; i < index; i++) {
@@ -79,10 +79,10 @@ public class GenericLinkedList<T> {
         if (isEmpty()) {
             throw new RuntimeException("Linked list is Empty");
         }
-        T item = head.item;
+        T data = head.data;
         head = head.next;
         size--;
-        return item;
+        return data;
     }
 
     // Method to remove an element from the end of the linked list
@@ -91,7 +91,7 @@ public class GenericLinkedList<T> {
             throw new RuntimeException("Linked list is empty");
         }
         if (size == 1) {
-            T item = head.item;
+            T item = head.data;
             head = null;
             size--;
             return item;
@@ -103,11 +103,11 @@ public class GenericLinkedList<T> {
             curr = curr.next;
         }
 
-        T item = curr.item;
+        T data = curr.data;
         assert prev != null;
         prev.next = null;
         size--;
-        return item;
+        return data;
     }
     // Method to remove an element from a specific index in the linked list
     public T removeFromIndex(int index) {
@@ -125,7 +125,7 @@ public class GenericLinkedList<T> {
                 prev = curr;
                 curr = curr.next;
             }
-            T item = curr.item;
+            T item = curr.data;
             prev.next = curr.next;
             size--;
             return item;
@@ -140,7 +140,7 @@ public class GenericLinkedList<T> {
         for (int i = 0; i < index; i++) {
             curr = curr.next;
         }
-        return curr.item;
+        return curr.data;
     }
 
     // Method to display the elements of the linked list
@@ -150,7 +150,7 @@ public class GenericLinkedList<T> {
         }
         Node<T> curr = head;
         while (curr != null){
-            System.out.print(curr.item + " -> ");
+            System.out.print(curr.data + " -> ");
             curr = curr.next;
         }
         System.out.println("null");

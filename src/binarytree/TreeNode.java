@@ -1,11 +1,11 @@
 package binarytree;
 
-public class Tree {
+public class TreeNode {
     int val;
-    Tree left;
-    Tree right;
+    TreeNode left;
+    TreeNode right;
 
-    Tree(int val){
+    TreeNode(int val){
         this.val = val;
         left = null;
         right = null;

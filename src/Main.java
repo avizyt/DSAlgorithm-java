@@ -1,20 +1,13 @@
-import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdOut;
-import stack.FixedCapacityStack;
+
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-
-        FixedCapacityStack<String> s;
-        s = new FixedCapacityStack<>(100);
-        while (!StdIn.isEmpty()) {
-            String item = StdIn.readString();
-            if (!item.equals("-")){
-                s.push(item);
-            } else if(!s.isEmpty()) {
-                StdOut.print(s.pop() + " ");
-            }
+        int[] arr = new int[5];
+        for (int i = 0; i <5; i++) {
+            arr[i] = i;
         }
-        StdOut.println("(" + s.size() + " left on stack ");
+        System.out.println(Arrays.toString(arr));
     }
 }

@@ -20,7 +20,7 @@ public class NumberSteps2Zero {
         return steps;
     }
 
-    private static int calSteps(int num){
-
-    }
+//    private static int calSteps(int num){
+//
+//    }
 }

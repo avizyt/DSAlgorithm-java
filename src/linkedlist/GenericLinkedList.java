@@ -163,6 +163,7 @@ public class GenericLinkedList<T> {
         linkedList.insertAtEnd(30);
         linkedList.insertAtBeginning(5);
         linkedList.insertAtIndex(2, 15);
+        linkedList.removeFromIndex(2);
 
         System.out.println("Linked list elements:");
         linkedList.display();

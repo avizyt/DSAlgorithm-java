@@ -1,18 +1,20 @@
 package leetcodes.llist;
 
-
-public class ReverseLL {
-    public static ListNode reverseList(ListNode head) {
-        ListNode prev = null;
-        ListNode curr = head;
-
-        while(curr != null){
-            ListNode nextNode = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = nextNode;
+public class MiddleOfLinkedList {
+    public static ListNode findMiddle(ListNode head){
+        if (head == null || head.next == null){
+            return head;
         }
-        return prev;
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
     }
 
     private static void printLL(ListNode head){
@@ -26,7 +28,7 @@ public class ReverseLL {
 
     public static void main(String[] args) {
         ListNode ll = new ListNode(5, new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(1)))));
-        ListNode result = ReverseLL.reverseList(ll);
+        ListNode result = MiddleOfLinkedList.findMiddle(ll);
         printLL(result);
     }
 }
